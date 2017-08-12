@@ -1,4 +1,5 @@
 // ==UserScript==
+// @author      Stephen Davis
 // @name        KaniWani Audio
 // @namespace   kaniwani-audio.sd.net.nz
 // @description Audio reinforcement for KaniWani vocabulary
