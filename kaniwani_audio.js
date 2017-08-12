@@ -2,7 +2,7 @@
 // @name        KaniWani Audio
 // @namespace   kaniwani-audio.sd.net.nz
 // @description Audio reinforcement for KaniWani vocabulary
-// @version     0.1-dev
+// @version     0.2
 // @include     https://kaniwani.com/kw/review*
 // @include     https://www.kaniwani.com/kw/review*
 // @include     http://kaniwani.com/kw/review*
@@ -35,39 +35,26 @@
     })();
 
     kwa.detailKanjiChanged = function() {
-        console.log("DetailKanji changed");
         var vocabItem = kwa._detailKanji.getElementsByClassName("-kanji")[0];
         var vocabText = vocabItem.innerHTML.split("<br>")[0];
-        console.log("Item is now " + vocabText);
         var slug = kwa.db[vocabText.trim()];
         if(slug) {
-            console.log("Slug is now " + slug);
             kwa._nextAudio = new Audio("//cdn.wanikani.com/audio/" + slug + ".mp3");
         } else {
-            console.log("No slug");
             kwa._nextAudio = null;
         }
     };
 
     kwa.answerPanelChanged = function() {
-        console.log("AnswerPanel changed");
         var ap_classes = kwa._answerPanel.classList;
         if(ap_classes.contains("-marked")) {
             if(ap_classes.contains("-correct")) {
-                console.log("Marked correct");
                 kwa._nextAudio.play();
-            } else if(ap_classes.contains("-incorrect")) {
-                console.log("Marked incorrect");
-            } else {
-                console.log("Marked with who knows what");
             }
-        } else {
-            console.log("Not marked yet");
         }
     };
 
     kwa.init = function() {
-        console.log("KaniWani Audio init");
         kwa._detailKanji = document.getElementById('detailKanji').children[1];
         kwa.observeDOM(kwa._detailKanji, function() {
             kwa.detailKanjiChanged();
