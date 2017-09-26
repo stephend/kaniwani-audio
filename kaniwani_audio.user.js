@@ -62,7 +62,7 @@
         });
         kwa.detailKanjiChanged();
         kwa._answerPanel = document.getElementById('answerPanel');
-        kwa.observeDOM(kwa._detailKanji, function() {
+        kwa.observeDOM(kwa._answerPanel, function() {
             kwa.answerPanelChanged();
         });
     };
