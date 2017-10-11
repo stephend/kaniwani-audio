@@ -3,7 +3,7 @@
 // @name        KaniWani Audio
 // @namespace   kaniwani-audio.sd.net.nz
 // @description Audio reinforcement for KaniWani vocabulary
-// @version     0.2
+// @version     0.2.1
 // @include     https://kaniwani.com/kw/review*
 // @include     https://www.kaniwani.com/kw/review*
 // @include     http://kaniwani.com/kw/review*
